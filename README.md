@@ -11,7 +11,7 @@ Scan a QR at the xerox shop, upload your PDF, choose print settings, see the pri
   <img src="screenshots/shop-queue.png" alt="Shop owner's live queue" width="48%">
 </p>
 
-> A working prototype, tested locally. The idea was inspired by a post by @only_vibecoding on Threads. I built this implementation with AI assistance while learning FastAPI, REST APIs and databases.
+> A working prototype, tested locally. I built this with AI assistance while learning FastAPI, REST APIs and databases.
 
 ## What it does
 
