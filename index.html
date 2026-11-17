@@ -1,0 +1,108 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Xerox Flow: animated explainer</title>
+<meta name="description" content="A 30-second animated walkthrough of how Xerox Flow works: scan a QR, upload a PDF, set print options, and send it to the xerox shop queue.">
+<meta property="og:title" content="Xerox Flow: how it works">
+<meta property="og:description" content="Ek QR. Zero bhid. Instant print. Watch a PDF travel from a student’s phone to the shop’s queue.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--paper:#f4efe6;--card:#fffdf8;--ink:#1d1b3a;--mu:#6b6788;--line:#d9d2c8;--pink:#ff48b0;--blue:#0078bf;--yel:#ffd400}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#16132b;--card:#221e3d;--ink:#f4efe6;--mu:#a9a5c9;--line:#3b3560;--pink:#ff6ac1;--blue:#3da5ff}}
+:root[data-theme="dark"]{--paper:#16132b;--card:#221e3d;--ink:#f4efe6;--mu:#a9a5c9;--line:#3b3560;--pink:#ff6ac1;--blue:#3da5ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 "Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif}
+main{max-width:520px;margin:0 auto;padding:16px}
+h1{font-size:32px;font-weight:800;margin:0;letter-spacing:-.5px;text-shadow:3px 3px 0 var(--pink),-2px -2px 0 var(--blue)}
+.sub{color:var(--mu);margin:8px 0 14px}
+.seg{display:flex;gap:4px;margin-bottom:10px}
+.seg button{flex:1;height:10px;padding:0;border:0;border-radius:5px;background:var(--line);cursor:pointer;overflow:hidden}
+.seg i{display:block;height:100%;width:0;background:var(--pink)}.seg .done i{width:100%}
+.seg .on i{animation:fill 4.5s linear forwards}.paused .seg .on i{animation-play-state:paused}
+@keyframes fill{to{width:100%}}
+svg{display:block;width:100%;height:auto}
+.bg{fill:var(--card);stroke:var(--ink);stroke-width:2}.hc{fill:var(--blue);opacity:.35}
+.card{fill:var(--card);stroke:var(--ink);stroke-width:2}
+.sb{filter:drop-shadow(4px 4px 0 var(--blue))}.sp{filter:drop-shadow(4px 4px 0 var(--pink))}.sy{filter:drop-shadow(4px 4px 0 var(--yel))}
+.tx{fill:var(--ink);font:12px "Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif}.b{font-weight:800}.wt{fill:#fff}
+.pdf{fill:var(--pink);stroke:var(--ink);stroke-width:1.5}.ln{fill:none;stroke:var(--mu);stroke-width:1.5;stroke-dasharray:5 5}
+.q{fill:var(--ink)}.dot{fill:var(--mu);opacity:.6}.pulse{fill:none;stroke:var(--pink);stroke-width:3}
+.paper{fill:#fff;stroke:#1d1b3a;stroke-width:1}.pk{fill:var(--yel);stroke:var(--ink);stroke-width:1.5}
+.stp{fill:none;stroke:var(--pink);stroke-width:3}.stb{fill:none;stroke:var(--blue);stroke-width:3}
+.st,.cf{transform-box:fill-box;transform-origin:center}
+[data-v]{opacity:0}
+@media (prefers-reduced-motion:no-preference){[data-v],[data-t]{transition:opacity .5s ease,transform 1.2s cubic-bezier(.3,1.3,.5,1)}
+.pulse{animation:pl 1s ease-in-out infinite}.dot{transform-box:fill-box;animation:wb 1s ease-in-out infinite alternate}}
+@media (prefers-reduced-motion:reduce){.seg .on i{animation:none;width:100%}}
+@keyframes pl{50%{stroke-opacity:.1}}@keyframes wb{to{transform:translate(3px,-5px)}}
+.cap{min-height:104px;margin-top:14px}.cap h2{font-size:22px;font-weight:800;margin:0 0 4px}.cap p{margin:0}
+.ctl{display:flex;gap:10px;margin-top:8px}
+.ctl button{flex:1;padding:12px;border:2px solid var(--ink);background:var(--card);color:var(--ink);border-radius:10px;font:inherit;font-weight:800;cursor:pointer;box-shadow:3px 3px 0 var(--blue)}
+button:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+</style></head><body><main>
+<h1>Xerox Flow</h1><div class="sub">Ek QR. Zero bhid. Instant print.</div>
+<div class="seg" id="seg"></div>
+<svg id="stage" viewBox="0 0 400 440" role="img" aria-label="Animated explainer of how a print job travels from a student’s phone to the xerox shop">
+<defs><pattern id="ht" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.7" class="hc"/></pattern></defs>
+<rect class="bg" x="1" y="1" width="398" height="438" rx="16"/>
+<path d="M1 262H399V424Q399 439 384 439H16Q1 439 1 424Z" fill="url(#ht)"/>
+<path class="ln" data-v="2-5" d="M75 280 Q95 150 135 100"/><path class="ln" data-v="4-6" d="M270 70 Q335 80 335 128"/>
+<circle class="pk" r="5" data-v="2-5"><animateMotion dur="1.4s" repeatCount="indefinite" path="M75 280 Q95 150 135 100"/></circle>
+<circle class="pk" r="5" data-v="2-5"><animateMotion dur="1.4s" begin="-.7s" repeatCount="indefinite" path="M75 280 Q95 150 135 100"/></circle>
+<circle class="pk" r="5" data-v="4-6"><animateMotion dur="1.4s" repeatCount="indefinite" path="M270 70 Q335 80 335 128"/></circle>
+<circle class="pk" r="5" data-v="4-6"><animateMotion dur="1.4s" begin="-.7s" repeatCount="indefinite" path="M270 70 Q335 80 335 128"/></circle>
+<g data-v="2-6"><rect class="card sb" x="130" y="20" width="140" height="80" rx="10"/><text class="tx b" x="200" y="44" text-anchor="middle">Server + jobs.db</text><text class="tx" id="sv" x="200" y="74" text-anchor="middle"></text></g>
+<g data-v="4-6"><rect class="card sp" x="285" y="130" width="100" height="80" rx="10"/><text class="tx b" x="335" y="154" text-anchor="middle">Shop screen</text><text class="tx" id="sh" x="335" y="184" text-anchor="middle"></text></g>
+<rect class="card sy" x="270" y="290" width="115" height="120" rx="10"/><text class="tx b" x="327" y="396" text-anchor="middle">Counter</text>
+<g id="qr"></g><rect class="pulse" data-v="1" x="278" y="298" width="48" height="48" rx="4"/>
+<rect class="card" x="335" y="300" width="40" height="28" rx="4"/>
+<g id="crowd" data-v="0"><text class="tx b" x="150" y="296">A3 or A4?</text><text class="tx b" x="104" y="430">Pen drive!</text><text class="tx b" x="196" y="414">2 copies bhaiya!</text></g>
+<g data-v="5-6" data-t="4:translate(0px,-24px);5:translate(0px,0px);6:translate(-85px,6px)"><rect class="paper" x="342" y="338" width="28" height="36"/><rect class="paper" x="338" y="342" width="28" height="36"/><rect class="paper" x="334" y="346" width="28" height="36"/></g>
+<g data-v="1-6" data-t="6:translate(150px,0px)"><rect class="card sp" x="34" y="280" width="76" height="112" rx="12"/><rect class="q" x="56" y="287" width="32" height="4" rx="2"/><text class="tx b" id="ph" x="72" y="342" text-anchor="middle" style="font-size:13px"></text></g>
+<g data-v="2" data-t="2:translate(75px,-195px)"><rect class="pdf" x="46" y="244" width="30" height="34" rx="3"/><text class="tx b wt" x="61" y="266" text-anchor="middle">PDF</text></g>
+<g data-v="4" data-t="4:translate(85px,-215px)"><rect class="pdf" x="40" y="246" width="44" height="28" rx="4"/><text class="tx b wt" x="62" y="264" text-anchor="middle">#3</text></g>
+<g class="st" data-v="5" data-t="4:rotate(-14deg) scale(2.6);5:rotate(-14deg) scale(1)"><rect class="stp" x="140" y="184" width="100" height="34" rx="4"/><text class="tx b" x="190" y="206" text-anchor="middle" style="font-size:17px">PRINTED</text></g>
+<g class="st" data-v="6" data-t="5:rotate(-14deg) scale(2.6);6:rotate(-14deg) scale(1)"><rect class="stb" x="125" y="184" width="130" height="34" rx="4"/><text class="tx b" x="190" y="206" text-anchor="middle" style="font-size:17px">ZERO BHID</text></g>
+</svg>
+<div class="cap" aria-live="polite"><h2 id="ct"></h2><p id="cx"></p></div>
+<div class="ctl"><button id="pp">Pause</button><button id="rp">Replay</button></div>
+</main><script>
+const $=s=>document.querySelector(s),NS="http://www.w3.org/2000/svg",RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const PH=["","Scan QR","Pick PDF","₹0","Token #3","Printed!","Collected"],
+SV=["","","3 pages found","3 × ₹2 = ₹6","Job #3 saved","Status: printed","Status: done"],
+SH=["","","","","#3 waiting","#3 printed","#3 collected"],
+CAP=[["The problem","Everyone crowds the counter, hands over files and explains settings out loud. Slow for you, chaos for the shop."],
+["Scan","Scan the QR on the counter. It’s only a web address, so there’s no app to install."],
+["Upload","Your PDF zips to the server, which counts the pages by itself."],
+["Pick settings","Choose colour, paper size, sides and copies. The server works out the price: 3 pages × ₹2 = ₹6."],
+["Send","The job is saved in the database. You get token #3 and the shop screen lights up with your job."],
+["Print","The owner opens the PDF, prints it and taps Printed. Your phone updates on its own."],
+["Collect","Walk up, take your pages and pay. Ek QR, zero bhid, instant print."]];
+function mk(p,t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+if(RM)document.querySelectorAll(".pk").forEach(e=>e.remove());
+[1,1,1,0,1,1,0,1,1,0,1,1,0,1,1,0,1,1,0,1,1,0,1,1,1].forEach((v,i)=>{if(v)mk($("#qr"),"rect",{x:282+(i%5)*8,y:302+Math.floor(i/5)*8,width:8,height:8,class:"q"})});
+for(let k=0;k<16;k++){const c=mk($("#crowd"),"circle",{cx:120+(k*53)%140,cy:320+(k*37)%85,r:9,class:"dot"});c.style.animationDelay=(-k*.17)+"s"}
+const CL=["var(--pink)","var(--blue)","var(--yel)"];
+for(let k=0;k<18;k++){const r=mk($("#stage"),"rect",{x:190,y:200,width:8,height:5,class:"cf"}),a=k*20*Math.PI/180,d=70+(k%4)*28;
+r.style.fill=CL[k%3];r.dataset.v="6";r.dataset.t="6:translate("+Math.round(Math.cos(a)*d)+"px,"+Math.round(Math.sin(a)*d)+"px) rotate("+k*47+"deg)"}
+const els=[...document.querySelectorAll("[data-v],[data-t]")],seg=$("#seg");
+CAP.forEach((_,i)=>{const b=document.createElement("button");b.setAttribute("aria-label","Go to step "+(i+1));b.appendChild(document.createElement("i"));b.onclick=()=>{playing=!RM;go(i)};seg.appendChild(b)});
+let n=0,playing=!RM,timer,pt=[];
+function go(i){n=i;
+els.forEach(e=>{const d=e.dataset;
+if(d.v){const[a,b]=d.v.split("-").map(Number);e.style.opacity=i>=a&&i<=(b??a)?1:0}
+if(d.t){const m={};d.t.split(";").forEach(p=>{const k=p.indexOf(":");m[+p.slice(0,k)]=p.slice(k+1)});
+let t="translate(0px,0px)";for(let k=0;k<=i;k++)if(m[k])t=m[k];e.style.transform=t}});
+$("#ph").textContent=PH[i];$("#sv").textContent=SV[i];$("#sh").textContent=SH[i];
+$("#ct").textContent=(i+1)+". "+CAP[i][0];$("#cx").textContent=CAP[i][1];
+pt.forEach(clearTimeout);pt=[];if(i===3)for(let k=0;k<=6;k++)pt.push(setTimeout(()=>{$("#ph").textContent="₹"+k},350+k*220));
+[...seg.children].forEach(b=>b.className="");void seg.offsetWidth;
+[...seg.children].forEach((b,k)=>b.className=k<i?"done":k===i?"on":"");
+clearTimeout(timer);if(playing&&i<6)timer=setTimeout(()=>go(i+1),4500);
+if(i===6)playing=false;
+document.body.classList.toggle("paused",!playing&&i<6);$("#pp").textContent=playing?"Pause":"Play"}
+$("#pp").onclick=()=>{if(n===6){playing=true;go(0);return}playing=!playing;if(playing)go(n);else{clearTimeout(timer);document.body.classList.add("paused");$("#pp").textContent="Play"}};
+$("#rp").onclick=()=>{playing=true;go(0)};
+go(0);
+</script></body></html>
